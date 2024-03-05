@@ -61,14 +61,15 @@ int main() {
             switch(ex){
                 case 1:
                     printf("Valor Real: ");
-                    scanf("%i", &n1);
+                    scanf("%f", &n1);
                     printf("Valor Imaginário: ");
-                    scanf("%i", &n2);
+                    scanf("%f", &n2);
+
+                    float n1e = pow(n2, 2);
+                    float h = n1*n1 + n2*n2;
+                    float ang = (atan2(n2, n1) * (180 / M_PI));
                     
-                    double real = sqrt(pow(n1, 2) + pow(n2, 2));
-                    double ang = atan2(n2, n1) * (180 / M_PI);
-                    
-                    printf("%d∠%d°", real, ang);
+                    printf("%f∠%f°", sqrt(h), ang);
             }
         break;
     }
